@@ -1,0 +1,7 @@
+107 NHANSU gồm:  “Nhân viên cơ bản” (có 10 người), “Giảng viên” (có 80 người), “Giáo vụ” (có 10 người), “Trưởng đơn vị” (có 6 người), “Trưởng khoa” (có 1 người).
+1000 SINHVIEN
+6 DONVI
+50 HOCPHAN
+200 KHMO
+1000 PHANCONG
+5000 DANGKY
