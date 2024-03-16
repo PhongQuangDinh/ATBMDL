@@ -106,7 +106,7 @@ takenPhone = set()
 #--------------------config stuff above------------------------
 
 
-def gen_ROLE(id: int) -> str: # havent used this
+def gen_ROLE(id: str) -> str: # havent used this
     role = random.choice(roleList)
     while EmployeeDict[role][0] >= EmployeeDict[role][1]:
         role = random.choice(roleList)

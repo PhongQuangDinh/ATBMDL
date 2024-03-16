@@ -1,5 +1,5 @@
 alter session set current_schema = ad;
-
+alter session set container = PDB_PROJECT;
 ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
 
 create user "4" IDENTIFIED by 4;

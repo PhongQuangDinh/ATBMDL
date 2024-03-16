@@ -25,10 +25,6 @@ DELETE FROM HOCPHAN;
 DELETE FROM KHMO;
 DELETE FROM PHANCONG;
 DELETE FROM DANGKY;
-ALTER TABLE SINHVIEN MODIFY (MASV GENERATED AS IDENTITY (START WITH 1));
-ALTER TABLE DONVI MODIFY (MADV GENERATED AS IDENTITY (START WITH 1));
-ALTER TABLE NHANSU MODIFY (MANV GENERATED AS IDENTITY (START WITH 1));
-ALTER TABLE HOCPHAN MODIFY (MAHP GENERATED AS IDENTITY (START WITH 1));
 """
 # cursor.execute("DELETE FROM SINHVIEN")
 # cursor.execute("DELETE FROM DONVI")
@@ -49,7 +45,8 @@ command = """
 temp = ""
 
 for i in range(1, student_size + 1):
-    student_list.append(i)
+    student_id = f"SV{i:04}"
+    student_list.append(student_id)
     name = gen_name(30)
     phai = gen_gender()
     ngsinh = gen_birthday(18,21)
@@ -59,8 +56,8 @@ for i in range(1, student_size + 1):
     MANGANH = gen_MANGANH()
     SOTC = random.randint(0,138)
     DTB = round(random.uniform(5.0,10.0),2)
-    text = """insert into SINHVIEN (HOTEN,PHAI,NGSINH,DCHI,DT,MACT,MANGANH,SOTCTL,DTBTL) values({0},{1},TO_DATE({2},'YY-MM-DD'),{3},{4},{5},{6},{7},{8})"""
-    text_val = text.format(name,phai,ngsinh,dchi, dt, MACT, MANGANH, random.randint(0,138),DTB,i)
+    text = """insert into SINHVIEN (MASV,HOTEN,PHAI,NGSINH,DCHI,DT,MACT,MANGANH,SOTCTL,DTBTL) values('{9}',{0},{1},TO_DATE({2},'YY-MM-DD'),{3},{4},{5},{6},{7},{8})"""
+    text_val = text.format(name,phai,ngsinh,dchi, dt, MACT, MANGANH, random.randint(0,138),DTB,student_id)
     temp += text_val + ";\n"
     # cursor.execute(text_val)
 
@@ -68,34 +65,40 @@ command = command.format(temp)
 File.write(command)
 
 #---------------GEN DONVI
+dv_cnt = 0
+dvList = []
 for i in DONVI_name:
-    text = f"insert into DONVI(TENDV) values({i});\n"
+    dv_cnt += 1
+    madv = f"DV{dv_cnt:02}"
+    dvList.append(madv)
+    text = f"insert into DONVI(MADV,TENDV) values('{madv}',{i});\n"
     File.write(text)
 
 #--------------GEN NHANSU
 for i in range(1,EmployeeSize + 1):
+    manv = f"NV{i:03}"
     name = gen_name(30)
     phai = gen_gender()
     ngsinh = gen_birthday(21,65)
     dchi = gen_address(50)
     dt = gen_phone()
     phucap = round(random.uniform(0.0,5.0),1)
-    vaitro = gen_ROLE(i)
+    vaitro = gen_ROLE(manv)
     madv = ""
-    if vaitro == "N'Nhân viên cơ bản'" or vaitro == "N'Giáo vụ'": madv = 1
-    elif vaitro == "N'Trưởng đơn vị'": madv = len(DONVI_TRG) + 1 if len(DONVI_TRG) > 0 else 1
-    else: madv = random.choice([2,3,4,5,6,7])
-    text = """insert into NHANSU(HOTEN,PHAI,NGSINH,PHUCAP,DT,VAITRO,MADV) values({0},{1},TO_DATE({2},'YY-MM-DD'),{3},{4},{5},{6});\n"""
-    text_val = text.format(name,phai,ngsinh,phucap,dt,vaitro,madv)
+    if vaitro == "N'Nhân viên cơ bản'" or vaitro == "N'Giáo vụ'": madv = "DV01"
+    elif vaitro == "N'Trưởng đơn vị'": madv = f"DV{len(DONVI_TRG) + 1:02}" if len(DONVI_TRG) > 0 else "DV01"
+    else: madv = f"DV{random.choice([2,3,4,5,6,7]):02}"
+    text = """insert into NHANSU(MANV,HOTEN,PHAI,NGSINH,PHUCAP,DT,VAITRO,MADV) values('{7}',{0},{1},TO_DATE({2},'YY-MM-DD'),{3},{4},{5},'{6}');\n"""
+    text_val = text.format(name,phai,ngsinh,phucap,dt,vaitro,madv,manv)
     File.write(text_val)
 
-#--------------GEN DONVI
-text = """update DONVI set TRGDV = {0} where MADV = {1};\n"""
-text_val = text.format(EmployeeDict["N'Trưởng khoa'"][2][0],1)
+#--------------UPDATE DONVI
+text = """update DONVI set TRGDV = '{0}' where MADV = '{1}';\n"""
+text_val = text.format(EmployeeDict["N'Trưởng khoa'"][2][0],dvList[0])
 File.write(text_val)
 for i in range(2,len(DONVI_name) + 1):
-    text = """update DONVI set TRGDV = {0} where MADV = {1};\n"""
-    text_val = text.format(EmployeeDict["N'Trưởng đơn vị'"][2][i - 2], i)
+    text = """update DONVI set TRGDV = '{0}' where MADV = '{1}';\n"""
+    text_val = text.format(EmployeeDict["N'Trưởng đơn vị'"][2][i - 2], dvList[i - 1])
     File.write(text_val)
     
 #-------------GEN HOCPHAN
@@ -103,14 +106,15 @@ cnt = 0
 HocPhan = []
 for key,val in HocPhanList.items():
     cnt += 1
-    HocPhan.append(cnt)
-    text  = """insert into HOCPHAN(TENHP,SOTC,STLT,STTH,SOSVTD,MADV) values({0},{1},{2},{3},{4},{5});\n"""
-    text_val = text.format(key,val[0],random.randint(40,50),random.randint(20,25),random.randint(30,100),random.randint(2,7))
+    mahp = f"HP{cnt:02}"
+    HocPhan.append(mahp)
+    text  = """insert into HOCPHAN(MAHP,TENHP,SOTC,STLT,STTH,SOSVTD,MADV) values('{6}',{0},{1},{2},{3},{4},'{5}');\n"""
+    text_val = text.format(key,val[0],random.randint(40,50),random.randint(20,25),random.randint(30,100),random.choice(dvList),mahp)
     File.write(text_val)
 
 #-------------GEN KHMO
 while len(KHMOlist) < KHMOsize:
-    text = """insert into KHMO(MAHP,HK,NAM,MACT) values({0},{1},{2},{3});\n"""
+    text = """insert into KHMO(MAHP,HK,NAM,MACT) values('{0}',{1},{2},{3});\n"""
     hp = random.choice(HocPhan)
     hk = random.randint(1,3)
     nam = random.randint(2020,2024)
@@ -121,7 +125,7 @@ while len(KHMOlist) < KHMOsize:
 
 #------------GEN PHANCONG
 while len(PHANCONGlist) < PHANCONGsize:
-    text = """insert into PHANCONG(MAGV,MAHP,HK,NAM,MACT) values({0},{1},{2},{3},{4});\n"""
+    text = """insert into PHANCONG(MAGV,MAHP,HK,NAM,MACT) values('{0}','{1}',{2},{3},{4});\n"""
     magv = random.choice(EmployeeDict["N'Giảng viên'"][2])
     hp = random.choice(HocPhan)
     hk = random.randint(1,3)
@@ -133,7 +137,7 @@ while len(PHANCONGlist) < PHANCONGsize:
 
 #------------GEN DANGKY
 while len(DANGKYlist) < DANGKYsize:
-    text = """insert into DANGKY(MASV,MAGV,MAHP,HK,NAM,MACT,DIEMTH,DIEMQT,DIEMCK,DIEMTK) values({0},{1},{2},{3},{4},{5},{6},{7},{8},{9});\n"""
+    text = """insert into DANGKY(MASV,MAGV,MAHP,HK,NAM,MACT,DIEMTH,DIEMQT,DIEMCK,DIEMTK) values('{0}','{1}','{2}',{3},{4},{5},{6},{7},{8},{9});\n"""
     masv = random.choice(student_list)
     magv = random.choice(EmployeeDict["N'Giảng viên'"][2])
     hp = random.choice(HocPhan)
