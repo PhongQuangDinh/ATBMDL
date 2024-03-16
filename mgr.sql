@@ -1,11 +1,15 @@
 alter session set current_schema = ad;
-
+alter session set container = PDB_PROJECT;
 ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
 
-create user "4" IDENTIFIED by 4;
-GRANT CREATE SESSION TO "4" container = all;
+drop user KH004;
 
-drop user tmp;
+create user KH004 IDENTIFIED by 004;
+
+
+GRANT CREATE SESSION TO "4" container = CURRENT;
+
+drop user "4";
 
 create role C##RL_NVCB;
 
@@ -134,6 +138,6 @@ BEGIN
  );
 END;
 
-SELECT (SYS_CONTEXT('USERENV', 'SESSION_USER')) FROM DUAL;
+SELECT (SYS_CONTEXT('USERENV', 'ISDBA')) FROM DUAL;
 
 SELECT * FROM ad.NHANSU;
