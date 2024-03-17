@@ -1,11 +1,11 @@
 alter session set current_schema = ad;
-alter session set container = PDB_PROJECT;
+
 ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
 
-create user "4" IDENTIFIED by 4;
-GRANT CREATE SESSION TO "4" container = all;
-create user "1" IDENTIFIED by 1;
-GRANT CREATE SESSION TO "1" container = all;
+create user NV001 IDENTIFIED by 1;
+GRANT CREATE SESSION TO NV001 container = all;
+create user NV009 IDENTIFIED by 9;
+GRANT CREATE SESSION TO NV009 container = all;
 
 create role RL_NVCB;
 
@@ -15,7 +15,7 @@ grant select on ad.DONVI to RL_NVCB;
 grant select on ad.HOCPHAN to RL_NVCB;
 grant select on ad.KHMO to RL_NVCB;
 
-grant RL_NVCB to "4";
+grant RL_NVCB to NV001;
 
 create role RL_GV;
 
@@ -24,8 +24,9 @@ grant select,insert,update on ad.SINHVIEN to RL_GV;
 grant select,insert,update on ad.DONVI to RL_GV;
 grant select,insert,update on ad.HOCPHAN to RL_GV;
 grant select,insert,update on ad.KHMO to RL_GV;
+grant select,UPDATE on ad.PHANCONG to RL_GV;
 
-grant RL_GV to "1";
+grant RL_GV to NV009;
 
 --CREATE OR REPLACE PROCEDURE USP_CREATEUSER AS
 --    CURSOR CUR IS 
@@ -76,10 +77,10 @@ BEGIN
         v_session_user := SYS_CONTEXT('USERENV', 'SESSION_USER');
         SELECT VAITRO INTO v_vaitro
         FROM NHANSU
-        WHERE TO_NUMBER(MANV) = TO_NUMBER(v_session_user);   
+        WHERE MANV = v_session_user;   
     END IF;
 
-  IF v_vaitro = 'Nhân viên cơ bản' OR v_vaitro = 'Giáo vụ' THEN
+  IF v_vaitro = N'Nhân viên cơ bản' OR v_vaitro = N'Giáo vụ' THEN
     RETURN '1 = 1'; 
   ELSE
     RETURN '1 = 0'; 
@@ -97,7 +98,7 @@ BEGIN
     RETURN '1 = 1';
   ELSE
     v_session_user := SYS_CONTEXT('USERENV', 'SESSION_USER');
-    RETURN 'MANV =' || v_session_user;    
+    RETURN 'MANV = ''' || v_session_user || '''';  
   END IF;
 END;
 
@@ -162,6 +163,53 @@ BEGIN
  );
 END;
 
+CREATE OR REPLACE FUNCTION GV
+  (P_SCHEMA VARCHAR2, P_OBJ VARCHAR2)
+RETURN VARCHAR2
+AS
+  MA ad.HOCPHAN.MAHP%TYPE;
+  STRSQL VARCHAR2(2000);
+  CURSOR CUR IS 
+     SELECT MAHP 
+     FROM ad.HOCPHAN hp JOIN ad.DONVI dv ON hp.MADV = dv.MADV JOIN ad.NHANSU ns ON dv.TRGDV = ns.MANV 
+     WHERE ns.VAITRO = 'Trưởng khoa';
+BEGIN
+  STRSQL := '';
+  OPEN CUR;
+  LOOP
+     FETCH CUR INTO MA;
+     EXIT WHEN CUR%NOTFOUND;
+     IF (STRSQL IS NOT NULL AND STRSQL != '') THEN
+        STRSQL := STRSQL ||','''|| MA ||'''';
+     ELSE
+        STRSQL := ''''|| MA ||'''';
+     END IF;
+  END LOOP;
+  CLOSE CUR;
+  RETURN 'MAHP IN ('||STRSQL||')';
+END;
+
+select GV('AD','PHANCONG') from dual;
+
+
+BEGIN
+ DBMS_RLS.ADD_POLICY(
+ OBJECT_SCHEMA =>'ad',
+ OBJECT_NAME=>'PHANCONG',
+ POLICY_NAME =>'GV',
+ FUNCTION_SCHEMA => 'ad',
+ POLICY_FUNCTION=>'GV',
+ STATEMENT_TYPES=>'UPDATE',
+ UPDATE_CHECK => TRUE 
+ );
+END;
+
+BEGIN
+ DBMS_RLS.DROP_POLICY(
+ 'ad','PHANCONG','GV'
+ );
+END;
+
 --BEGIN
 -- DBMS_RLS.ADD_POLICY(
 -- OBJECT_SCHEMA =>'ad',
@@ -174,5 +222,3 @@ END;
 -- sec_relevant_cols => 'DT'
 -- );
 --END;
-
-SELECT SYS_CONTEXT('USERENV', 'ISDBA') FROM DUAL;

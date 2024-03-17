@@ -1,4 +1,4 @@
-
+--alter session set current_schema = ad;
 DELETE FROM SINHVIEN;
 DELETE FROM DONVI;
 DELETE FROM NHANSU;
