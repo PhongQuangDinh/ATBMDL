@@ -20,16 +20,29 @@ grant select,update,delete on PHANCONG to TruongKhoa;
 -- CS#5
 -- Ham dac biet cua Truong Khoa
 
-create or replace function TruongKhoaFunc
- (P_SCHEMA varchar2, P_OBJ varchar2)
-return varchar2
-as
-    user varchar(100);
-begin
-    user := sys_context('userenv','session_user');
-    -- user := SUBSTR(user, 4);
-    return 'MASV = ''' || user || '''';
-end;
+CREATE OR REPLACE FUNCTION TruongKhoaFunc(schema_var IN VARCHAR2, table_name IN VARCHAR2)
+RETURN VARCHAR2
+AS
+    v_session_user VARCHAR2(20);
+    v_vaitro NHANSU.VAITRO%TYPE; 
+    is_dba VARCHAR2(5);
+BEGIN
+    is_dba := SYS_CONTEXT('USERENV', 'ISDBA');
+    IF is_dba = 'TRUE' THEN
+        RETURN '1 = 1';
+    ELSE
+        v_session_user := SYS_CONTEXT('USERENV', 'SESSION_USER');
+        SELECT VAITRO INTO v_vaitro
+        FROM NHANSU
+        WHERE MANV = v_session_user;   
+    END IF;
+
+  IF v_vaitro = N'Trưởng khoa' THEN
+    RETURN '1 = 1'; 
+  ELSE
+    RETURN '1 = 0'; 
+  END IF;
+END;
 /
 
 BEGIN
@@ -39,11 +52,31 @@ BEGIN
     policy_name     => 'TruongKhoa',
     function_schema => 'project_sys',
     policy_function => 'TruongKhoaFunc',
-    statement_types => 'SELECT, INSERT, UPDATE, DELETE',
-    update_check    => TRUE,
+    statement_types => 'SELECT',
     enable          => TRUE);
 END;
 /
+BEGIN
+  DBMS_RLS.ADD_POLICY (
+    object_schema   => 'project_sys',
+    object_name     => 'SINHVIEN',
+    policy_name     => 'TruongKhoa',
+    function_schema => 'project_sys',
+    policy_function => 'TruongKhoaFunc',
+    statement_types => 'SELECT',
+    enable          => TRUE);
+END;
+/
+
+select * from DBA_POLICIES;
+
+BEGIN
+    DBMS_RLS.DROP_POLICY(
+        object_schema => 'project_sys',  -- replace with your schema name
+        object_name => 'NHANSU',  -- replace with your table name
+        policy_name => 'TruongKhoa'  -- replace with your policy name
+    );
+END;
 
 -- CS#6
 create or replace function SinhVienFunc
@@ -100,6 +133,5 @@ BEGIN
     enable          => TRUE);
 END;
 /
-
 
 select * from SINHVIEN;
