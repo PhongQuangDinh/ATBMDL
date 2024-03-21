@@ -1,4 +1,7 @@
-﻿namespace ATBM_A_14
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace ATBM_A_14
 {
     partial class UserTab
     {
@@ -28,96 +31,112 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            dataGridView2 = new DataGridView();
-            label3 = new Label();
-            username = new TextBox();
-            search = new Button();
-            groupBox1 = new GroupBox();
-            groupBox2 = new GroupBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            SuspendLayout();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.username = new System.Windows.Forms.TextBox();
+            this.search = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.SuspendLayout();
             // 
             // dataGridView1
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(125, 32);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(751, 149);
-            dataGridView1.TabIndex = 1;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(125, 26);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(751, 119);
+            this.dataGridView1.TabIndex = 1;
             // 
             // dataGridView2
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(125, 273);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(751, 155);
-            dataGridView2.TabIndex = 3;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(113, 103);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.Size = new System.Drawing.Size(751, 111);
+            this.dataGridView2.TabIndex = 3;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(148, 224);
-            label3.Name = "label3";
-            label3.Size = new Size(111, 20);
-            label3.TabIndex = 4;
-            label3.Text = "Enter username";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label3.Location = new System.Drawing.Point(137, 46);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(111, 20);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Enter username";
             // 
             // username
             // 
-            username.Location = new Point(288, 223);
-            username.Name = "username";
-            username.Size = new Size(179, 27);
-            username.TabIndex = 5;
+            this.username.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.username.Location = new System.Drawing.Point(273, 46);
+            this.username.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.username.Name = "username";
+            this.username.Size = new System.Drawing.Size(179, 27);
+            this.username.TabIndex = 5;
             // 
             // search
             // 
-            search.Location = new Point(506, 223);
-            search.Name = "search";
-            search.Size = new Size(99, 27);
-            search.TabIndex = 6;
-            search.Text = "SEARCH";
-            search.UseVisualStyleBackColor = true;
+            this.search.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.search.Location = new System.Drawing.Point(492, 46);
+            this.search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(99, 27);
+            this.search.TabIndex = 6;
+            this.search.Text = "SEARCH";
+            this.search.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            groupBox1.Location = new Point(12, 12);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(877, 180);
-            groupBox1.TabIndex = 7;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "USER";
+            this.groupBox1.Location = new System.Drawing.Point(12, 10);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(877, 163);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "USER";
             // 
             // groupBox2
             // 
-            groupBox2.Location = new Point(12, 198);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(877, 240);
-            groupBox2.TabIndex = 8;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "PRIVILEGES";
+            this.groupBox2.Controls.Add(this.search);
+            this.groupBox2.Controls.Add(this.dataGridView2);
+            this.groupBox2.Controls.Add(this.username);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Location = new System.Drawing.Point(12, 177);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(877, 228);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "PRIVILEGES";
             // 
             // UserTab
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(901, 450);
-            Controls.Add(search);
-            Controls.Add(username);
-            Controls.Add(label3);
-            Controls.Add(dataGridView2);
-            Controls.Add(dataGridView1);
-            Controls.Add(groupBox1);
-            Controls.Add(groupBox2);
-            Name = "UserTab";
-            Text = "UserTab";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(901, 402);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "UserTab";
+            this.Text = "UserTab";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion

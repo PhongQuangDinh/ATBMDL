@@ -1,4 +1,7 @@
-﻿namespace ATBM_A_14
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace ATBM_A_14
 {
     partial class RoleTab
     {
@@ -28,101 +31,115 @@
         /// </summary>
         private void InitializeComponent()
         {
-            role = new GroupBox();
-            dataGridView1 = new DataGridView();
-            privileges = new GroupBox();
-            label1 = new Label();
-            textBox1 = new TextBox();
-            search = new Button();
-            dataGridView2 = new DataGridView();
-            role.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            privileges.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            SuspendLayout();
+            this.role = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.privileges = new System.Windows.Forms.GroupBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.search = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.role.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.privileges.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.SuspendLayout();
             // 
             // role
             // 
-            role.Controls.Add(dataGridView1);
-            role.Location = new Point(12, 12);
-            role.Name = "role";
-            role.Size = new Size(776, 204);
-            role.TabIndex = 0;
-            role.TabStop = false;
-            role.Text = "ROLE";
+            this.role.Controls.Add(this.dataGridView1);
+            this.role.Location = new System.Drawing.Point(12, 12);
+            this.role.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.role.Name = "role";
+            this.role.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.role.Size = new System.Drawing.Size(776, 204);
+            this.role.TabIndex = 0;
+            this.role.TabStop = false;
+            this.role.Text = "ROLE";
             // 
             // dataGridView1
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(69, 15);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(701, 180);
-            dataGridView1.TabIndex = 0;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(69, 15);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(701, 180);
+            this.dataGridView1.TabIndex = 0;
             // 
             // privileges
             // 
-            privileges.Controls.Add(dataGridView2);
-            privileges.Controls.Add(search);
-            privileges.Controls.Add(textBox1);
-            privileges.Controls.Add(label1);
-            privileges.Location = new Point(12, 222);
-            privileges.Name = "privileges";
-            privileges.Size = new Size(776, 214);
-            privileges.TabIndex = 1;
-            privileges.TabStop = false;
-            privileges.Text = "PRIVILEGES";
-            privileges.Enter += groupBox2_Enter;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(108, 23);
-            label1.Name = "label1";
-            label1.Size = new Size(104, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Enter user role";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(235, 20);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(163, 27);
-            textBox1.TabIndex = 1;
-            // 
-            // search
-            // 
-            search.Location = new Point(431, 20);
-            search.Name = "search";
-            search.Size = new Size(91, 27);
-            search.TabIndex = 2;
-            search.Text = "SEARCH";
-            search.UseVisualStyleBackColor = true;
+            this.privileges.Controls.Add(this.dataGridView2);
+            this.privileges.Controls.Add(this.search);
+            this.privileges.Controls.Add(this.textBox1);
+            this.privileges.Controls.Add(this.label1);
+            this.privileges.Location = new System.Drawing.Point(12, 252);
+            this.privileges.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.privileges.Name = "privileges";
+            this.privileges.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.privileges.Size = new System.Drawing.Size(776, 282);
+            this.privileges.TabIndex = 1;
+            this.privileges.TabStop = false;
+            this.privileges.Text = "PRIVILEGES";
             // 
             // dataGridView2
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(69, 66);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(701, 142);
-            dataGridView2.TabIndex = 3;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(69, 92);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.Size = new System.Drawing.Size(701, 185);
+            this.dataGridView2.TabIndex = 3;
+            // 
+            // search
+            // 
+            this.search.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.search.Location = new System.Drawing.Point(431, 20);
+            this.search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(91, 34);
+            this.search.TabIndex = 2;
+            this.search.Text = "SEARCH";
+            this.search.UseVisualStyleBackColor = true;
+            this.search.Click += new System.EventHandler(this.search_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBox1.Location = new System.Drawing.Point(235, 20);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(163, 27);
+            this.textBox1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label1.Location = new System.Drawing.Point(108, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Enter user role";
             // 
             // RoleTab
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(privileges);
-            Controls.Add(role);
-            Name = "RoleTab";
-            Text = "RoleTab";
-            role.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            privileges.ResumeLayout(false);
-            privileges.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(812, 538);
+            this.Controls.Add(this.privileges);
+            this.Controls.Add(this.role);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "RoleTab";
+            this.Text = "RoleTab";
+            this.role.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.privileges.ResumeLayout(false);
+            this.privileges.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion

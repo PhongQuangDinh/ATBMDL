@@ -1,4 +1,7 @@
-﻿namespace ATBM_A_14
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace ATBM_A_14
 {
     partial class Create_Delete_Update
     {
@@ -28,285 +31,305 @@
         /// </summary>
         private void InitializeComponent()
         {
-            groupBox1 = new GroupBox();
-            create_user = new Button();
-            password = new TextBox();
-            username_create = new TextBox();
-            label2 = new Label();
-            lable1 = new Label();
-            groupBox2 = new GroupBox();
-            update_user = new Button();
-            new_password = new TextBox();
-            username_update = new TextBox();
-            label3 = new Label();
-            label1 = new Label();
-            groupBox3 = new GroupBox();
-            delete_user = new Button();
-            delete_username = new TextBox();
-            label4 = new Label();
-            groupBox4 = new GroupBox();
-            groupBox5 = new GroupBox();
-            delete_role = new Button();
-            create_role = new Button();
-            textBox1 = new TextBox();
-            label5 = new Label();
-            groupBox6 = new GroupBox();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
-            groupBox3.SuspendLayout();
-            groupBox4.SuspendLayout();
-            groupBox5.SuspendLayout();
-            SuspendLayout();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.create_user = new System.Windows.Forms.Button();
+            this.password = new System.Windows.Forms.TextBox();
+            this.username_create = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lable1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.update_user = new System.Windows.Forms.Button();
+            this.new_password = new System.Windows.Forms.TextBox();
+            this.username_update = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.delete_user = new System.Windows.Forms.Button();
+            this.delete_username = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.delete_role = new System.Windows.Forms.Button();
+            this.create_role = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.BackColor = SystemColors.ScrollBar;
-            groupBox1.Controls.Add(create_user);
-            groupBox1.Controls.Add(password);
-            groupBox1.Controls.Add(username_create);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(lable1);
-            groupBox1.Location = new Point(25, 38);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(320, 173);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "CREATE";
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.groupBox1.Controls.Add(this.create_user);
+            this.groupBox1.Controls.Add(this.password);
+            this.groupBox1.Controls.Add(this.username_create);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.lable1);
+            this.groupBox1.Location = new System.Drawing.Point(25, 38);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(320, 172);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "CREATE";
             // 
             // create_user
             // 
-            create_user.Location = new Point(67, 120);
-            create_user.Name = "create_user";
-            create_user.Size = new Size(175, 35);
-            create_user.TabIndex = 4;
-            create_user.Text = "CREATE";
-            create_user.UseVisualStyleBackColor = true;
+            this.create_user.Location = new System.Drawing.Point(67, 120);
+            this.create_user.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.create_user.Name = "create_user";
+            this.create_user.Size = new System.Drawing.Size(175, 35);
+            this.create_user.TabIndex = 4;
+            this.create_user.Text = "CREATE";
+            this.create_user.UseVisualStyleBackColor = true;
             // 
             // password
             // 
-            password.Location = new Point(112, 80);
-            password.Name = "password";
-            password.Size = new Size(177, 27);
-            password.TabIndex = 3;
+            this.password.Location = new System.Drawing.Point(112, 80);
+            this.password.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.password.Name = "password";
+            this.password.Size = new System.Drawing.Size(177, 27);
+            this.password.TabIndex = 3;
             // 
             // username_create
             // 
-            username_create.Location = new Point(112, 39);
-            username_create.Name = "username_create";
-            username_create.Size = new Size(177, 27);
-            username_create.TabIndex = 2;
+            this.username_create.Location = new System.Drawing.Point(112, 39);
+            this.username_create.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.username_create.Name = "username_create";
+            this.username_create.Size = new System.Drawing.Size(177, 27);
+            this.username_create.TabIndex = 2;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(20, 86);
-            label2.Name = "label2";
-            label2.Size = new Size(70, 20);
-            label2.TabIndex = 1;
-            label2.Text = "Password";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(20, 86);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Password";
             // 
             // lable1
             // 
-            lable1.AutoSize = true;
-            lable1.Location = new Point(20, 42);
-            lable1.Name = "lable1";
-            lable1.Size = new Size(82, 20);
-            lable1.TabIndex = 0;
-            lable1.Text = "User Name";
-            lable1.Click += lable1_Click;
+            this.lable1.AutoSize = true;
+            this.lable1.Location = new System.Drawing.Point(20, 42);
+            this.lable1.Name = "lable1";
+            this.lable1.Size = new System.Drawing.Size(82, 20);
+            this.lable1.TabIndex = 0;
+            this.lable1.Text = "User Name";
             // 
             // groupBox2
             // 
-            groupBox2.BackColor = SystemColors.ScrollBar;
-            groupBox2.Controls.Add(update_user);
-            groupBox2.Controls.Add(new_password);
-            groupBox2.Controls.Add(username_update);
-            groupBox2.Controls.Add(label3);
-            groupBox2.Controls.Add(label1);
-            groupBox2.Location = new Point(339, 27);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(320, 173);
-            groupBox2.TabIndex = 1;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "UPDATE";
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.groupBox2.Controls.Add(this.update_user);
+            this.groupBox2.Controls.Add(this.new_password);
+            this.groupBox2.Controls.Add(this.username_update);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Location = new System.Drawing.Point(339, 28);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(320, 172);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "UPDATE";
             // 
             // update_user
             // 
-            update_user.Location = new Point(81, 120);
-            update_user.Name = "update_user";
-            update_user.Size = new Size(175, 35);
-            update_user.TabIndex = 5;
-            update_user.Text = "UPDATE";
-            update_user.UseVisualStyleBackColor = true;
+            this.update_user.Location = new System.Drawing.Point(81, 120);
+            this.update_user.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.update_user.Name = "update_user";
+            this.update_user.Size = new System.Drawing.Size(175, 35);
+            this.update_user.TabIndex = 5;
+            this.update_user.Text = "UPDATE";
+            this.update_user.UseVisualStyleBackColor = true;
             // 
             // new_password
             // 
-            new_password.Location = new Point(122, 83);
-            new_password.Name = "new_password";
-            new_password.Size = new Size(169, 27);
-            new_password.TabIndex = 4;
+            this.new_password.Location = new System.Drawing.Point(122, 82);
+            this.new_password.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.new_password.Name = "new_password";
+            this.new_password.Size = new System.Drawing.Size(169, 27);
+            this.new_password.TabIndex = 4;
             // 
             // username_update
             // 
-            username_update.Location = new Point(122, 42);
-            username_update.Name = "username_update";
-            username_update.Size = new Size(169, 27);
-            username_update.TabIndex = 3;
+            this.username_update.Location = new System.Drawing.Point(122, 42);
+            this.username_update.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.username_update.Name = "username_update";
+            this.username_update.Size = new System.Drawing.Size(169, 27);
+            this.username_update.TabIndex = 3;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(13, 86);
-            label3.Name = "label3";
-            label3.Size = new Size(104, 20);
-            label3.TabIndex = 2;
-            label3.Text = "New Password";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 86);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(104, 20);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "New Password";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(13, 42);
-            label1.Name = "label1";
-            label1.Size = new Size(82, 20);
-            label1.TabIndex = 0;
-            label1.Text = "User Name";
-            label1.Click += label1_Click;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "User Name";
             // 
             // groupBox3
             // 
-            groupBox3.BackColor = SystemColors.ScrollBar;
-            groupBox3.Controls.Add(delete_user);
-            groupBox3.Controls.Add(delete_username);
-            groupBox3.Controls.Add(label4);
-            groupBox3.Location = new Point(665, 26);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(320, 173);
-            groupBox3.TabIndex = 2;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "DELETE";
+            this.groupBox3.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.groupBox3.Controls.Add(this.delete_user);
+            this.groupBox3.Controls.Add(this.delete_username);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Location = new System.Drawing.Point(665, 26);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Size = new System.Drawing.Size(320, 172);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "DELETE";
             // 
             // delete_user
             // 
-            delete_user.Location = new Point(74, 120);
-            delete_user.Name = "delete_user";
-            delete_user.Size = new Size(175, 35);
-            delete_user.TabIndex = 2;
-            delete_user.Text = "DELETE";
-            delete_user.UseVisualStyleBackColor = true;
+            this.delete_user.Location = new System.Drawing.Point(74, 120);
+            this.delete_user.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.delete_user.Name = "delete_user";
+            this.delete_user.Size = new System.Drawing.Size(175, 35);
+            this.delete_user.TabIndex = 2;
+            this.delete_user.Text = "DELETE";
+            this.delete_user.UseVisualStyleBackColor = true;
             // 
             // delete_username
             // 
-            delete_username.Location = new Point(103, 64);
-            delete_username.Name = "delete_username";
-            delete_username.Size = new Size(198, 27);
-            delete_username.TabIndex = 1;
+            this.delete_username.Location = new System.Drawing.Point(103, 64);
+            this.delete_username.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.delete_username.Name = "delete_username";
+            this.delete_username.Size = new System.Drawing.Size(198, 27);
+            this.delete_username.TabIndex = 1;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(15, 67);
-            label4.Name = "label4";
-            label4.Size = new Size(82, 20);
-            label4.TabIndex = 0;
-            label4.Text = "User Name";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(15, 68);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(82, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "User Name";
             // 
             // groupBox4
             // 
-            groupBox4.BackColor = SystemColors.MenuHighlight;
-            groupBox4.Controls.Add(groupBox3);
-            groupBox4.Controls.Add(groupBox2);
-            groupBox4.Location = new Point(12, 12);
-            groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(1002, 217);
-            groupBox4.TabIndex = 3;
-            groupBox4.TabStop = false;
-            groupBox4.Text = "USER";
+            this.groupBox4.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.groupBox4.Controls.Add(this.groupBox3);
+            this.groupBox4.Controls.Add(this.groupBox2);
+            this.groupBox4.Location = new System.Drawing.Point(12, 12);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox4.Size = new System.Drawing.Size(1002, 218);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "USER";
             // 
             // groupBox5
             // 
-            groupBox5.BackColor = SystemColors.ScrollBar;
-            groupBox5.Controls.Add(delete_role);
-            groupBox5.Controls.Add(create_role);
-            groupBox5.Controls.Add(textBox1);
-            groupBox5.Controls.Add(label5);
-            groupBox5.Location = new Point(298, 261);
-            groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(437, 153);
-            groupBox5.TabIndex = 4;
-            groupBox5.TabStop = false;
-            groupBox5.Text = "CREATE/DELETE";
+            this.groupBox5.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.groupBox5.Controls.Add(this.delete_role);
+            this.groupBox5.Controls.Add(this.create_role);
+            this.groupBox5.Controls.Add(this.textBox1);
+            this.groupBox5.Controls.Add(this.label5);
+            this.groupBox5.Location = new System.Drawing.Point(298, 261);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox5.Size = new System.Drawing.Size(437, 152);
+            this.groupBox5.TabIndex = 4;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "CREATE/DELETE";
             // 
             // delete_role
             // 
-            delete_role.Location = new Point(234, 98);
-            delete_role.Name = "delete_role";
-            delete_role.Size = new Size(155, 35);
-            delete_role.TabIndex = 3;
-            delete_role.Text = "DELETE";
-            delete_role.UseVisualStyleBackColor = true;
-            delete_role.Click += button1_Click;
+            this.delete_role.Location = new System.Drawing.Point(234, 98);
+            this.delete_role.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.delete_role.Name = "delete_role";
+            this.delete_role.Size = new System.Drawing.Size(155, 35);
+            this.delete_role.TabIndex = 3;
+            this.delete_role.Text = "DELETE";
+            this.delete_role.UseVisualStyleBackColor = true;
             // 
             // create_role
             // 
-            create_role.Location = new Point(43, 98);
-            create_role.Name = "create_role";
-            create_role.Size = new Size(155, 35);
-            create_role.TabIndex = 2;
-            create_role.Text = "CREATE";
-            create_role.UseVisualStyleBackColor = true;
+            this.create_role.Location = new System.Drawing.Point(43, 98);
+            this.create_role.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.create_role.Name = "create_role";
+            this.create_role.Size = new System.Drawing.Size(155, 35);
+            this.create_role.TabIndex = 2;
+            this.create_role.Text = "CREATE";
+            this.create_role.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(145, 41);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(255, 27);
-            textBox1.TabIndex = 1;
+            this.textBox1.Location = new System.Drawing.Point(145, 41);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(255, 27);
+            this.textBox1.TabIndex = 1;
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(29, 44);
-            label5.Name = "label5";
-            label5.Size = new Size(83, 20);
-            label5.TabIndex = 0;
-            label5.Text = "Role Name";
-            label5.Click += label5_Click;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(29, 44);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(83, 20);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Role Name";
             // 
             // groupBox6
             // 
-            groupBox6.BackColor = SystemColors.MenuHighlight;
-            groupBox6.Location = new Point(248, 238);
-            groupBox6.Name = "groupBox6";
-            groupBox6.Size = new Size(526, 187);
-            groupBox6.TabIndex = 5;
-            groupBox6.TabStop = false;
-            groupBox6.Text = "ROLE";
-            groupBox6.Enter += groupBox6_Enter;
+            this.groupBox6.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.groupBox6.Location = new System.Drawing.Point(248, 238);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox6.Size = new System.Drawing.Size(526, 188);
+            this.groupBox6.TabIndex = 5;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "ROLE";
             // 
             // Create_Delete_Update
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Info;
-            ClientSize = new Size(1026, 450);
-            Controls.Add(groupBox5);
-            Controls.Add(groupBox1);
-            Controls.Add(groupBox4);
-            Controls.Add(groupBox6);
-            ForeColor = SystemColors.ControlText;
-            Name = "Create_Delete_Update";
-            Text = "Create_Delete_Update";
-            Load += Create_Delete_Update_Load;
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
-            groupBox4.ResumeLayout(false);
-            groupBox5.ResumeLayout(false);
-            groupBox5.PerformLayout();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Info;
+            this.ClientSize = new System.Drawing.Size(1026, 450);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox6);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "Create_Delete_Update";
+            this.Text = "Create_Delete_Update";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
