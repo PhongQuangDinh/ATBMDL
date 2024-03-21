@@ -76,7 +76,7 @@
             password.Name = "password";
             password.Size = new Size(165, 34);
             password.TabIndex = 3;
-            password.TextChanged += this.textBox1_TextChanged;
+            // password.TextChanged = ClickMe.; //this.textBox1_TextChanged;
             // 
             // label2
             // 
