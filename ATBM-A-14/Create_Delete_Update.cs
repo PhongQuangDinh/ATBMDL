@@ -41,5 +41,10 @@ namespace ATBM_A_14
         {
 
         }
+
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

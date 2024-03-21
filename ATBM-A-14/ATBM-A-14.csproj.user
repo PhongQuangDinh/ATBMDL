@@ -7,6 +7,12 @@
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GrantPrivileges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RoleTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="UserTab.cs">
       <SubType>Form</SubType>
     </Compile>

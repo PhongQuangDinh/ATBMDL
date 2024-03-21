@@ -28,26 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
             dataGridView1 = new DataGridView();
-            label2 = new Label();
             dataGridView2 = new DataGridView();
             label3 = new Label();
             username = new TextBox();
             search = new Button();
+            groupBox1 = new GroupBox();
+            groupBox2 = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(21, 32);
-            label1.Name = "label1";
-            label1.Size = new Size(52, 20);
-            label1.TabIndex = 0;
-            label1.Text = "USERS";
-            label1.Click += label1_Click;
             // 
             // dataGridView1
             // 
@@ -55,32 +45,22 @@
             dataGridView1.Location = new Point(125, 32);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(751, 161);
+            dataGridView1.Size = new Size(751, 149);
             dataGridView1.TabIndex = 1;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(21, 230);
-            label2.Name = "label2";
-            label2.Size = new Size(84, 20);
-            label2.TabIndex = 2;
-            label2.Text = "PRIVILEGES";
-            label2.Click += label2_Click;
             // 
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(125, 276);
+            dataGridView2.Location = new Point(125, 273);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(751, 162);
+            dataGridView2.Size = new Size(751, 155);
             dataGridView2.TabIndex = 3;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(148, 230);
+            label3.Location = new Point(148, 224);
             label3.Name = "label3";
             label3.Size = new Size(111, 20);
             label3.TabIndex = 4;
@@ -88,19 +68,37 @@
             // 
             // username
             // 
-            username.Location = new Point(288, 229);
+            username.Location = new Point(288, 223);
             username.Name = "username";
             username.Size = new Size(179, 27);
             username.TabIndex = 5;
             // 
             // search
             // 
-            search.Location = new Point(506, 229);
+            search.Location = new Point(506, 223);
             search.Name = "search";
             search.Size = new Size(99, 27);
             search.TabIndex = 6;
             search.Text = "SEARCH";
             search.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Location = new Point(12, 12);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(877, 180);
+            groupBox1.TabIndex = 7;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "USER";
+            // 
+            // groupBox2
+            // 
+            groupBox2.Location = new Point(12, 198);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(877, 240);
+            groupBox2.TabIndex = 8;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "PRIVILEGES";
             // 
             // UserTab
             // 
@@ -111,9 +109,9 @@
             Controls.Add(username);
             Controls.Add(label3);
             Controls.Add(dataGridView2);
-            Controls.Add(label2);
             Controls.Add(dataGridView1);
-            Controls.Add(label1);
+            Controls.Add(groupBox1);
+            Controls.Add(groupBox2);
             Name = "UserTab";
             Text = "UserTab";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -123,13 +121,12 @@
         }
 
         #endregion
-
-        private Label label1;
         private DataGridView dataGridView1;
-        private Label label2;
         private DataGridView dataGridView2;
         private Label label3;
         private TextBox username;
         private Button search;
+        private GroupBox groupBox1;
+        private GroupBox groupBox2;
     }
 }
