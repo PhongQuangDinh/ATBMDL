@@ -50,7 +50,7 @@ namespace ATBM_A_14
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(751, 119);
+            this.dataGridView1.Size = new System.Drawing.Size(751, 171);
             this.dataGridView1.TabIndex = 1;
             // 
             // dataGridView2
@@ -60,7 +60,7 @@ namespace ATBM_A_14
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.Size = new System.Drawing.Size(751, 111);
+            this.dataGridView2.Size = new System.Drawing.Size(751, 177);
             this.dataGridView2.TabIndex = 3;
             // 
             // label3
@@ -99,7 +99,7 @@ namespace ATBM_A_14
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(877, 163);
+            this.groupBox1.Size = new System.Drawing.Size(877, 191);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "USER";
@@ -110,20 +110,21 @@ namespace ATBM_A_14
             this.groupBox2.Controls.Add(this.dataGridView2);
             this.groupBox2.Controls.Add(this.username);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Location = new System.Drawing.Point(12, 177);
+            this.groupBox2.Location = new System.Drawing.Point(12, 205);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(877, 228);
+            this.groupBox2.Size = new System.Drawing.Size(877, 284);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "PRIVILEGES";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // UserTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(901, 402);
+            this.ClientSize = new System.Drawing.Size(975, 500);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
@@ -131,6 +132,7 @@ namespace ATBM_A_14
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UserTab";
             this.Text = "UserTab";
+            this.Load += new System.EventHandler(this.UserTab_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox2.ResumeLayout(false);

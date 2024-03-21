@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.ManagedDataAccess.Client;
 
 namespace ATBM_A_14
 {
     internal static class Program
     {
-        public static string connectionString = "";
+        public static OracleConnection conn;
+        // public static string connectionString = ""; // just variable, dont touch
         public static string username = ""; // just variable, dont touch
         public static string password = ""; // just variable, dont touch
 

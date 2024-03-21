@@ -47,7 +47,8 @@ namespace ATBM_A_14
             try
             {
                 conn.Open();
-                Program.connectionString = conn_str;
+                // Program.connectionString = conn_str;
+                Program.conn = conn;
                 Program.username = _username;
                 Program.password = _password;
 
@@ -56,6 +57,8 @@ namespace ATBM_A_14
                 this.Hide();
                 userTab.Closed += (s, args) => this.Close(); // Close Form1 when Form2 is closed
                 userTab.Show(); // Show Form2
+
+                // Program.conn.Close();
             }
             catch (OracleException ex)
             {
