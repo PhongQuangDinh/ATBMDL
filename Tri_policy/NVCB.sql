@@ -1,6 +1,8 @@
 alter session set current_schema = NV001;
 
-select * from ad.nhansu;
+select * from ad.V_NVCB;
+update ad.V_NVCB
+set PHUCAP = 4;
 
 select * from ad.sinhvien;
 
