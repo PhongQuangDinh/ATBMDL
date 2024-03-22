@@ -97,3 +97,4 @@ D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM-A-14.c
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\bin\Debug\Oracle.ManagedDataAccess.dll
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\bin\Debug\System.Formats.Asn1.dll
 D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\bin\Debug\System.Formats.Asn1.xml
+D:\COLLEGE\Security in Information System\ATBMDL\ATBM-A-14\obj\Debug\ATBM_A_14.Admin_Menu.resources

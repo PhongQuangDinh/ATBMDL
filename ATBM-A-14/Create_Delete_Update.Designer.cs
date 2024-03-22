@@ -316,8 +316,10 @@ namespace ATBM_A_14
             this.Controls.Add(this.groupBox6);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Create_Delete_Update";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create_Delete_Update";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

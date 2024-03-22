@@ -68,33 +68,50 @@ BEGIN
 END;
 /
 
+BEGIN
+    DBMS_RLS.DROP_POLICY(
+        object_schema => 'project_sys',  -- replace with your schema name
+        object_name => 'SINHVIEN',  -- replace with your table name
+        policy_name => 'SINHVIENXEM'  -- replace with your policy name
+    );
+END;
+
+-- CS#6
+create or replace function SinhVienFunc (P_SCHEMA varchar2, P_OBJ varchar2)
+return varchar2
+as
+    user varchar(100);
+    is_dba VARCHAR2(5);
+    role VARCHAR(2);
+begin
+    is_dba := SYS_CONTEXT('USERENV', 'ISDBA');
+    IF is_dba = 'TRUE' THEN
+        RETURN '';
+    else
+        user := sys_context('userenv','session_user');
+        role := substr(user,1,2);
+        if role = 'NV' then 
+            return '1=1';
+        elsif role = 'SV' then
+            return 'MASV = ' || user;
+        else
+            return '1=1';
+        end if;
+        -- user := SUBSTR(user, 4);
+        -- return 'MASV = ''' || user || '''';
+    end if;
+end;
+/
+
 select * from DBA_POLICIES;
 
 BEGIN
     DBMS_RLS.DROP_POLICY(
         object_schema => 'project_sys',  -- replace with your schema name
-        object_name => 'NHANSU',  -- replace with your table name
-        policy_name => 'TruongKhoa'  -- replace with your policy name
+        object_name => 'SINHVIEN',  -- replace with your table name
+        policy_name => 'SINHVIENXEM'  -- replace with your policy name
     );
 END;
-
--- CS#6
-create or replace function SinhVienFunc
- (P_SCHEMA varchar2, P_OBJ varchar2)
-return varchar2
-as
-    user varchar(100);
-    is_dba VARCHAR2(5);
-begin
-    is_dba := SYS_CONTEXT('USERENV', 'ISDBA');
-    IF is_dba = 'TRUE' THEN
-        RETURN '';
-    end if;
-    user := sys_context('userenv','session_user');
-    -- user := SUBSTR(user, 4);
-    return 'MASV = ''' || user || '''';
-end;
-/
 
 create or replace function SinhVien_HP_KHMO
  (P_SCHEMA varchar2, P_OBJ varchar2)
@@ -112,12 +129,12 @@ BEGIN
   DBMS_RLS.ADD_POLICY (
     object_schema   => 'project_sys',
     object_name     => 'SINHVIEN',
-    policy_name     => 'SinhVien',
+    policy_name     => 'SinhVienXem',
     function_schema => 'project_sys',
     policy_function => 'SinhVienFunc',
-    statement_types => 'SELECT,UPDATE',
-    update_check    => TRUE,
-    enable          => TRUE);
+    statement_types => 'SELECT'
+    -- update_check    => TRUE
+    );
 END;
 /
 
@@ -134,4 +151,8 @@ BEGIN
 END;
 /
 
-select * from SINHVIEN;
+select * from project_sys.NHANSU;
+select * from project_sys.SINHVIEN;
+
+select sys_context('USERENV','ISDBA') from dual;
+

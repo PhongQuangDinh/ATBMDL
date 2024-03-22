@@ -15,6 +15,7 @@ namespace ATBM_A_14
         public static string HOST = "localhost";
         public static string SERVICE = "PDB_PROJECT"; // SID is also fine here
         public static string PORT = "1521";
+        public static string SCHEMA = "project_sys";
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
