@@ -87,6 +87,7 @@ namespace ATBM_A_14
             this.create_user.TabIndex = 4;
             this.create_user.Text = "CREATE";
             this.create_user.UseVisualStyleBackColor = true;
+            this.create_user.Click += new System.EventHandler(this.create_user_Click);
             // 
             // password
             // 
@@ -207,6 +208,7 @@ namespace ATBM_A_14
             this.delete_user.TabIndex = 2;
             this.delete_user.Text = "DELETE";
             this.delete_user.UseVisualStyleBackColor = true;
+            this.delete_user.Click += new System.EventHandler(this.delete_user_Click);
             // 
             // delete_username
             // 

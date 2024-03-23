@@ -26,5 +26,10 @@ namespace ATBM_A_14
         {
 
         }
+
+        private void RoleTab_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

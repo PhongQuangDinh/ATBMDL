@@ -49,5 +49,23 @@ namespace ATBM_A_14
             adapter.Fill(data2);
             dataGridView2.DataSource = data2;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string sql = $"select * from DBA_USERS"; // for system table we dont need schema
+                command = new OracleCommand(sql, Program.conn);
+
+                DataTable data = new DataTable();
+                adapter = new OracleDataAdapter(command);
+                adapter.Fill(data);
+                dataGridView1.DataSource = data;
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

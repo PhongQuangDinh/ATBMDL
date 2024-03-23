@@ -135,6 +135,7 @@ namespace ATBM_A_14
             this.Name = "RoleTab";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RoleTab";
+            this.Load += new System.EventHandler(this.RoleTab_Load);
             this.role.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.privileges.ResumeLayout(false);

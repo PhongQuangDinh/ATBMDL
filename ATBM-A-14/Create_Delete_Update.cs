@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.ManagedDataAccess.Client;
 
 namespace ATBM_A_14
 {
@@ -22,29 +23,34 @@ namespace ATBM_A_14
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void delete_user_Click(object sender, EventArgs e)
         {
-
+            string sql = $"DROP USER {delete_username.Text}";
+            OracleCommand cmd = new OracleCommand(sql, Program.conn);
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show($"Successfully deleted user");
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show($"Failed to delete user: {ex.Message}");
+            }
         }
 
-        private void lable1_Click(object sender, EventArgs e)
+        private void create_user_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox6_Enter(object sender, EventArgs e)
-        {
-
+            string sql = $"CREATE USER {username_create.Text} IDENTIFIED BY {password.Text}";
+            OracleCommand cmd = new OracleCommand(sql, Program.conn);
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show($"Successfully created user");
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show($"Failed to create user: {ex.Message}");
+            }
         }
     }
 }

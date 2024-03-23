@@ -87,7 +87,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage2.Size = new System.Drawing.Size(1479, 1026);
+            this.tabPage2.Size = new System.Drawing.Size(1084, 576);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Users";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -98,7 +98,7 @@
             this.panel2.Location = new System.Drawing.Point(3, 4);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1473, 1018);
+            this.panel2.Size = new System.Drawing.Size(1078, 568);
             this.panel2.TabIndex = 0;
             // 
             // tabPage3
@@ -108,7 +108,7 @@
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage3.Size = new System.Drawing.Size(1479, 1026);
+            this.tabPage3.Size = new System.Drawing.Size(1084, 576);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Modifications";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -119,7 +119,7 @@
             this.panel3.Location = new System.Drawing.Point(3, 4);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1473, 1018);
+            this.panel3.Size = new System.Drawing.Size(1078, 568);
             this.panel3.TabIndex = 0;
             // 
             // tabPage4
@@ -129,7 +129,7 @@
             this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage4.Size = new System.Drawing.Size(1479, 1026);
+            this.tabPage4.Size = new System.Drawing.Size(1084, 576);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Roles";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -140,10 +140,10 @@
             this.panel4.Location = new System.Drawing.Point(3, 4);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1473, 1018);
+            this.panel4.Size = new System.Drawing.Size(1078, 568);
             this.panel4.TabIndex = 0;
             // 
-            // Menu
+            // Admin_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -151,7 +151,7 @@
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "Menu";
+            this.Name = "Admin_Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.TabControlTest_Load);

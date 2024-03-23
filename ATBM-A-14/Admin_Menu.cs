@@ -38,5 +38,13 @@ namespace ATBM_A_14
             panel4.Controls.Add(role);
             role.Show();
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panel2.Controls.Clear();
+            UserTab us = new UserTab();
+            us.TopLevel = false;
+            panel2.Controls.Add(us);
+            us.Show();
+        }
     }
 }

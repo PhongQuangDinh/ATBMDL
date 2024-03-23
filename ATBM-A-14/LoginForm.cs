@@ -47,13 +47,19 @@ namespace ATBM_A_14
                     userTab.Closed += (s, args) => this.Show(); // Close Form1 when Form2 is closed
                     userTab.Show();
                 }
-                if (_username.Contains("NV"))
+                else if (_username.Contains("NV"))
                 {
                     NV_MENU userTab = new NV_MENU();
                     userTab.Closed += (s, args) => this.Show(); // Close Form1 when Form2 is closed
                     userTab.Show();
                 }
-                if (_username.Contains("SV"))
+                else if (_username.Contains("SV"))
+                {
+                    SV_MENU userTab = new SV_MENU();
+                    userTab.Closed += (s, args) => this.Show(); // Close Form1 when Form2 is closed
+                    userTab.Show();
+                }
+                else
                 {
                     SV_MENU userTab = new SV_MENU();
                     userTab.Closed += (s, args) => this.Show(); // Close Form1 when Form2 is closed
