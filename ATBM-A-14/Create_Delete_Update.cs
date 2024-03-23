@@ -52,6 +52,21 @@ namespace ATBM_A_14
                 MessageBox.Show($"Failed to create user: {ex.Message}");
             }
         }
+
+        private void groupBox7_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
