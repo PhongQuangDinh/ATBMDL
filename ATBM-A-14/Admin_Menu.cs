@@ -20,12 +20,12 @@ namespace ATBM_A_14
         {
             GrantPrivileges sup = new GrantPrivileges();
             sup.TopLevel = false;
-            panel1.Controls.Add(sup);
+            panel2.Controls.Add(sup);
             sup.Show();
 
             UserTab us = new UserTab();
             us.TopLevel = false;
-            panel2.Controls.Add(us);
+            panel1.Controls.Add(us);
             us.Show();
 
             Create_Delete_Update modification = new Create_Delete_Update();
@@ -40,10 +40,10 @@ namespace ATBM_A_14
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            panel2.Controls.Clear();
+            panel1.Controls.Clear();
             UserTab us = new UserTab();
             us.TopLevel = false;
-            panel2.Controls.Add(us);
+            panel1.Controls.Add(us);
             us.Show();
         }
     }

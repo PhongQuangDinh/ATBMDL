@@ -38,6 +38,7 @@ namespace ATBM_A_14
             this.search = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.role.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.privileges.SuspendLayout();
@@ -51,7 +52,7 @@ namespace ATBM_A_14
             this.role.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.role.Name = "role";
             this.role.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.role.Size = new System.Drawing.Size(776, 204);
+            this.role.Size = new System.Drawing.Size(1006, 204);
             this.role.TabIndex = 0;
             this.role.TabStop = false;
             this.role.Text = "ROLE";
@@ -63,11 +64,12 @@ namespace ATBM_A_14
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(701, 180);
+            this.dataGridView1.Size = new System.Drawing.Size(931, 180);
             this.dataGridView1.TabIndex = 0;
             // 
             // privileges
             // 
+            this.privileges.Controls.Add(this.button1);
             this.privileges.Controls.Add(this.dataGridView2);
             this.privileges.Controls.Add(this.search);
             this.privileges.Controls.Add(this.textBox1);
@@ -76,7 +78,7 @@ namespace ATBM_A_14
             this.privileges.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.privileges.Name = "privileges";
             this.privileges.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.privileges.Size = new System.Drawing.Size(776, 282);
+            this.privileges.Size = new System.Drawing.Size(1006, 282);
             this.privileges.TabIndex = 1;
             this.privileges.TabStop = false;
             this.privileges.Text = "PRIVILEGES";
@@ -88,7 +90,7 @@ namespace ATBM_A_14
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.Size = new System.Drawing.Size(701, 185);
+            this.dataGridView2.Size = new System.Drawing.Size(931, 185);
             this.dataGridView2.TabIndex = 3;
             // 
             // search
@@ -122,11 +124,22 @@ namespace ATBM_A_14
             this.label1.TabIndex = 0;
             this.label1.Text = "Enter user role";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.button1.Location = new System.Drawing.Point(559, 20);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 34);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "REFRESH";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // RoleTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 538);
+            this.ClientSize = new System.Drawing.Size(1071, 538);
             this.Controls.Add(this.privileges);
             this.Controls.Add(this.role);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -154,5 +167,6 @@ namespace ATBM_A_14
         private DataGridView dataGridView2;
         private Button search;
         private TextBox textBox1;
+        private Button button1;
     }
 }

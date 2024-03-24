@@ -68,7 +68,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage1.Size = new System.Drawing.Size(1084, 576);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Grant privileges";
+            this.tabPage1.Text = "Users";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // panel1
@@ -89,7 +89,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage2.Size = new System.Drawing.Size(1084, 576);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Users";
+            this.tabPage2.Text = "Privileges";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // panel2

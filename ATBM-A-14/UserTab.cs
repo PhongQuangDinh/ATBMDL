@@ -21,7 +21,6 @@ namespace ATBM_A_14
         }
         private void UserTab_Load(object sender, EventArgs e)
         {
-            // Program.conn.Open();
             try
             {
                 string sql = $"select * from DBA_USERS"; // for system table we dont need schema
@@ -41,7 +40,8 @@ namespace ATBM_A_14
         private void search_Click(object sender, EventArgs e)
         {
             string user = username.Text;
-            string sql1 = $"SELECT * FROM DBA_ROLE_PRIVS WHERE GRANTEE = UPPER('{user}')";
+            // FROM DBA_SYS_PRIVS ?? DBA_TAB_PRIVS ? 
+            string sql1 = $"SELECT * FROM DBA_TAB_PRIVS WHERE GRANTEE = UPPER('{user}')";
             command = new OracleCommand(sql1, Program.conn);
 
             DataTable data2 = new DataTable();
@@ -50,7 +50,7 @@ namespace ATBM_A_14
             dataGridView2.DataSource = data2;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // for refresh
         {
             try
             {

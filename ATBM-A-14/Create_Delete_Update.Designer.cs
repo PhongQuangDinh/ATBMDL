@@ -56,13 +56,13 @@ namespace ATBM_A_14
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.name_sys = new System.Windows.Forms.TextBox();
-            this.privis = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.grant = new System.Windows.Forms.Button();
             this.revoke = new System.Windows.Forms.Button();
+            this.grant = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.privis = new System.Windows.Forms.ComboBox();
+            this.name_sys = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -107,6 +107,7 @@ namespace ATBM_A_14
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(177, 27);
             this.password.TabIndex = 3;
+            this.password.UseSystemPasswordChar = true;
             // 
             // username_create
             // 
@@ -160,6 +161,7 @@ namespace ATBM_A_14
             this.update_user.TabIndex = 5;
             this.update_user.Text = "UPDATE";
             this.update_user.UseVisualStyleBackColor = true;
+            this.update_user.Click += new System.EventHandler(this.update_user_Click);
             // 
             // new_password
             // 
@@ -168,6 +170,7 @@ namespace ATBM_A_14
             this.new_password.Name = "new_password";
             this.new_password.Size = new System.Drawing.Size(169, 27);
             this.new_password.TabIndex = 4;
+            this.new_password.UseSystemPasswordChar = true;
             // 
             // username_update
             // 
@@ -278,6 +281,7 @@ namespace ATBM_A_14
             this.delete_role.TabIndex = 3;
             this.delete_role.Text = "DELETE";
             this.delete_role.UseVisualStyleBackColor = true;
+            this.delete_role.Click += new System.EventHandler(this.delete_role_Click);
             // 
             // create_role
             // 
@@ -288,6 +292,7 @@ namespace ATBM_A_14
             this.create_role.TabIndex = 2;
             this.create_role.Text = "CREATE";
             this.create_role.UseVisualStyleBackColor = true;
+            this.create_role.Click += new System.EventHandler(this.create_role_Click);
             // 
             // textBox1
             // 
@@ -328,7 +333,6 @@ namespace ATBM_A_14
             this.groupBox7.TabIndex = 6;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "SYSTEM PRIVILEGES";
-            this.groupBox7.Enter += new System.EventHandler(this.groupBox7_Enter);
             // 
             // groupBox8
             // 
@@ -347,40 +351,25 @@ namespace ATBM_A_14
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "GRANT/REVOKE";
             // 
-            // label6
+            // revoke
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 41);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(118, 20);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Name User/Role";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.revoke.Location = new System.Drawing.Point(234, 176);
+            this.revoke.Name = "revoke";
+            this.revoke.Size = new System.Drawing.Size(155, 35);
+            this.revoke.TabIndex = 6;
+            this.revoke.Text = "REVOKE";
+            this.revoke.UseVisualStyleBackColor = true;
+            this.revoke.Click += new System.EventHandler(this.revoke_Click);
             // 
-            // label7
+            // grant
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(25, 86);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(123, 20);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "System Privileges";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // name_sys
-            // 
-            this.name_sys.Location = new System.Drawing.Point(161, 37);
-            this.name_sys.Name = "name_sys";
-            this.name_sys.Size = new System.Drawing.Size(239, 27);
-            this.name_sys.TabIndex = 2;
-            // 
-            // privis
-            // 
-            this.privis.FormattingEnabled = true;
-            this.privis.Location = new System.Drawing.Point(161, 86);
-            this.privis.Name = "privis";
-            this.privis.Size = new System.Drawing.Size(239, 28);
-            this.privis.TabIndex = 3;
+            this.grant.Location = new System.Drawing.Point(43, 176);
+            this.grant.Name = "grant";
+            this.grant.Size = new System.Drawing.Size(155, 35);
+            this.grant.TabIndex = 5;
+            this.grant.Text = "GRANT";
+            this.grant.UseVisualStyleBackColor = true;
+            this.grant.Click += new System.EventHandler(this.grant_Click);
             // 
             // checkBox1
             // 
@@ -392,23 +381,38 @@ namespace ATBM_A_14
             this.checkBox1.Text = "With Grant Option";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // grant
+            // privis
             // 
-            this.grant.Location = new System.Drawing.Point(43, 176);
-            this.grant.Name = "grant";
-            this.grant.Size = new System.Drawing.Size(155, 35);
-            this.grant.TabIndex = 5;
-            this.grant.Text = "GRANT";
-            this.grant.UseVisualStyleBackColor = true;
+            this.privis.FormattingEnabled = true;
+            this.privis.Location = new System.Drawing.Point(161, 86);
+            this.privis.Name = "privis";
+            this.privis.Size = new System.Drawing.Size(239, 28);
+            this.privis.TabIndex = 3;
             // 
-            // revoke
+            // name_sys
             // 
-            this.revoke.Location = new System.Drawing.Point(234, 176);
-            this.revoke.Name = "revoke";
-            this.revoke.Size = new System.Drawing.Size(155, 35);
-            this.revoke.TabIndex = 6;
-            this.revoke.Text = "REVOKE";
-            this.revoke.UseVisualStyleBackColor = true;
+            this.name_sys.Location = new System.Drawing.Point(161, 37);
+            this.name_sys.Name = "name_sys";
+            this.name_sys.Size = new System.Drawing.Size(239, 27);
+            this.name_sys.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(25, 86);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(123, 20);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "System Privileges";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(25, 41);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(118, 20);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Name User/Role";
             // 
             // Create_Delete_Update
             // 
@@ -427,6 +431,7 @@ namespace ATBM_A_14
             this.Name = "Create_Delete_Update";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create_Delete_Update";
+            this.Load += new System.EventHandler(this.Create_Delete_Update_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

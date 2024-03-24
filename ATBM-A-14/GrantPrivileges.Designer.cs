@@ -85,6 +85,7 @@ namespace ATBM_A_14
             this.revoke.TabIndex = 5;
             this.revoke.Text = "REVOKE";
             this.revoke.UseVisualStyleBackColor = true;
+            this.revoke.Click += new System.EventHandler(this.revoke_Click);
             // 
             // grant
             // 
@@ -95,6 +96,7 @@ namespace ATBM_A_14
             this.grant.TabIndex = 4;
             this.grant.Text = "GRANT";
             this.grant.UseVisualStyleBackColor = true;
+            this.grant.Click += new System.EventHandler(this.grant_Click);
             // 
             // role_name
             // 
@@ -164,6 +166,7 @@ namespace ATBM_A_14
             this.revoke_user.TabIndex = 7;
             this.revoke_user.Text = "REVOKE";
             this.revoke_user.UseVisualStyleBackColor = true;
+            this.revoke_user.Click += new System.EventHandler(this.revoke_user_Click);
             // 
             // grant_user
             // 
@@ -174,6 +177,7 @@ namespace ATBM_A_14
             this.grant_user.TabIndex = 6;
             this.grant_user.Text = "GRANT";
             this.grant_user.UseVisualStyleBackColor = true;
+            this.grant_user.Click += new System.EventHandler(this.grant_user_Click);
             // 
             // grant_option
             // 
@@ -306,6 +310,7 @@ namespace ATBM_A_14
             this.Name = "GrantPrivileges";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GrantPrivileges";
+            this.Load += new System.EventHandler(this.GrantPrivileges_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

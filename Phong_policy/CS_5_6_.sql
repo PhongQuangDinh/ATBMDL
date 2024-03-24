@@ -1,3 +1,6 @@
+
+alter session set current_schema = project_sys;
+
 -- Role Sinh vien
 create role SinhVien;
 grant select,update (DCHI, DT) on SINHVIEN to SinhVien;
@@ -5,10 +8,21 @@ grant select on KHMO to SinhVien;
 grant select on HOCPHAN to SinhVien;
 grant select,insert,delete on DANGKY to SinhVien; -- need trigger for insert
 
+-- revoke select on DANGKY from SinhVien;
+select ROLE from DBA_ROLES where role = 'SINHVIEN'; -- list of roles
+select * from dba_users where username = UPPER('whatthefuck');
+select * from DBA_SYS_PRIVS; -- list of people and their privileges
+select * from DBA_ROLE_PRIVS; -- list of people and their roles
+SELECT NAME FROM SYSTEM_PRIVILEGE_MAP; -- list of system privileges
+select * from all_tables where owner = upper('project_sys');
 
-
+select * from DBA_SYS_PRIVS where grantee = upper('whatthefuck') union all select * from DBA_ROLE_PRIVS  where GRANTEE = UPPER('whatthefuck');
 
 create role TruongKhoa;
+
+-- grant create table to TruongKhoa;
+-- revoke create table from TruongKhoa;
+
 grant select, update, delete on NHANSU to TruongKhoa;
 grant select on SINHVIEN to TruongKhoa;
 grant select on DANGKY to TruongKhoa;
@@ -153,6 +167,7 @@ END;
 
 select * from project_sys.NHANSU;
 select * from project_sys.SINHVIEN;
+select * from DANGKY;
 
 select sys_context('USERENV','ISDBA') from dual;
 

@@ -27,3 +27,6 @@ select * from project_sys.DONVI;
 select * from project_sys.HOCPHAN;
 select * from project_sys.SINHVIEN;
 
+
+
+
