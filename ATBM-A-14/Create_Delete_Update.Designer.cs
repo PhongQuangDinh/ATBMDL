@@ -376,9 +376,9 @@ namespace ATBM_A_14
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(141, 136);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(152, 24);
+            this.checkBox1.Size = new System.Drawing.Size(160, 24);
             this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "With Grant Option";
+            this.checkBox1.Text = "With Admin Option";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // privis

@@ -8,16 +8,6 @@ grant select on KHMO to SinhVien;
 grant select on HOCPHAN to SinhVien;
 grant select,insert,delete on DANGKY to SinhVien; -- need trigger for insert
 
--- revoke select on DANGKY from SinhVien;
-select ROLE from DBA_ROLES where role = 'SINHVIEN'; -- list of roles
-select * from dba_users where username = UPPER('whatthefuck');
-select * from DBA_SYS_PRIVS; -- list of people and their privileges
-select * from DBA_ROLE_PRIVS; -- list of people and their roles
-SELECT NAME FROM SYSTEM_PRIVILEGE_MAP; -- list of system privileges
-select * from all_tables where owner = upper('project_sys');
-
-select * from DBA_SYS_PRIVS where grantee = upper('whatthefuck') union all select * from DBA_ROLE_PRIVS  where GRANTEE = UPPER('whatthefuck');
-
 create role TruongKhoa;
 
 -- grant create table to TruongKhoa;
