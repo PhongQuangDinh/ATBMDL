@@ -1,18 +1,10 @@
 alter session set current_schema = sys;
 ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
+
+drop user ad cascade;
+
 create user ad IDENTIFIED by 123;
 GRANT CREATE SESSION TO ad container = all;
 CONNECT ad/123; 
 
-Grant sysDBA TO ad;
-REVOKE DBA FROM ad;
---GRANT ALL PRIVILEGES TO ad;
---REVOKE ALL PRIVILEGES FROM ad;
-
-SHOW CON_NAME;
-
-SELECT SYS_CONTEXT('USERENV', 'CON_NAME') from dual;
-
-SELECT * FROM ALL_USERS ORDER BY USERNAME;
-
-
+Grant SYSDBA TO ad;

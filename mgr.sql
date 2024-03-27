@@ -2,12 +2,78 @@ alter session set current_schema = ad;
 
 ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
 
+-- DELETE USER HERE
+
+-- RUN AGAIN
+
+CREATE OR REPLACE PROCEDURE USP_CREATENHANVIEN
+AS 
+    CURSOR CUR IS (SELECT MANV 
+                    FROM NHANSU 
+                    WHERE MANV NOT IN (SELECT USERNAME 
+                                                FROM ALL_USERS) 
+                    ); 
+    STRSQL VARCHAR(2000); 
+    USR VARCHAR2(5); 
+BEGIN 
+    OPEN CUR; 
+    STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE'; 
+    EXECUTE IMMEDIATE(STRSQL); 
+    LOOP 
+        FETCH CUR INTO USR; 
+        EXIT WHEN CUR%NOTFOUND; 
+             
+        STRSQL := 'CREATE USER '||USR||' IDENTIFIED BY 123'; 
+        EXECUTE IMMEDIATE(STRSQL); 
+        STRSQL := 'GRANT CONNECT TO '||USR; 
+        EXECUTE IMMEDIATE(STRSQL); 
+    END LOOP; 
+    STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE'; 
+    EXECUTE IMMEDIATE(STRSQL); 
+    CLOSE CUR; 
+END; 
+
+CREATE OR REPLACE PROCEDURE USP_CREATESINHVIEN
+AS 
+    CURSOR CUR IS (SELECT MASV 
+                    FROM SINHVIEN 
+                    WHERE MASV NOT IN (SELECT USERNAME 
+                                                FROM ALL_USERS) 
+                    ); 
+    STRSQL VARCHAR(2000); 
+    USR VARCHAR2(5); 
+BEGIN 
+    OPEN CUR; 
+    STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE'; 
+    EXECUTE IMMEDIATE(STRSQL); 
+    LOOP 
+        FETCH CUR INTO USR; 
+        EXIT WHEN CUR%NOTFOUND; 
+             
+        STRSQL := 'CREATE USER '||USR||' IDENTIFIED BY 123'; 
+        EXECUTE IMMEDIATE(STRSQL); 
+        STRSQL := 'GRANT CONNECT TO '||USR; 
+        EXECUTE IMMEDIATE(STRSQL); 
+    END LOOP; 
+    STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE'; 
+    EXECUTE IMMEDIATE(STRSQL); 
+    CLOSE CUR; 
+END; 
+
 create user NV001 IDENTIFIED by 1;
 GRANT CREATE SESSION TO NV001 container = all;
 create user NV009 IDENTIFIED by 9;
 GRANT CREATE SESSION TO NV009 container = all;
 
+--create role RL_NVCB;
+
+-- create role
 create role RL_NVCB;
+create role RL_GIAOVU;
+create role RL_GIAOVIEN;
+create role RL_TDV;
+create role RL_TK;
+create role RL_SV;
 
 --revoke select,UPDATE on ad.NHANSU from RL_NVCB;
 grant select on ad.SINHVIEN to RL_NVCB;
@@ -16,17 +82,20 @@ grant select on ad.HOCPHAN to RL_NVCB;
 grant select on ad.KHMO to RL_NVCB;
 grant RL_NVCB to NV001;
 
-create role RL_GV;
 
---revoke select,UPDATE on ad.NHANSU from RL_GV;
-grant select,insert,update on ad.SINHVIEN to RL_GV;
-grant select,insert,update on ad.DONVI to RL_GV;
-grant select,insert,update on ad.HOCPHAN to RL_GV;
-grant select,insert,update on ad.KHMO to RL_GV;
-grant select,update on ad.PHANCONG to RL_GV;
-grant insert, delete, select on ad.DANGKY to RL_GV;
 
-grant RL_GV to NV009;
+SELECT *
+FROM dba_roles where ROLE like '%RL%';
+
+--revoke select,UPDATE on ad.NHANSU from RL_GIAOVU;
+grant select,insert,update on ad.SINHVIEN to RL_GIAOVU;
+grant select,insert,update on ad.DONVI to RL_GIAOVU;
+grant select,insert,update on ad.HOCPHAN to RL_GIAOVU;
+grant select,insert,update on ad.KHMO to RL_GIAOVU;
+grant select,update on ad.PHANCONG to RL_GIAOVU;
+grant insert, delete, select on ad.DANGKY to RL_GIAOVU;
+
+grant RL_GIAOVU to NV009;
 
 CREATE VIEW V_NVCB AS
 SELECT *
@@ -36,8 +105,8 @@ WHERE MaNV = SYS_CONTEXT('USERENV', 'SESSION_USER');
 GRANT SELECT ON V_NVCB TO RL_NVCB;
 GRANT UPDATE(DT) ON V_NVCB TO RL_NVCB;
 
-GRANT SELECT ON V_NVCB TO RL_GV;
-GRANT UPDATE(DT) ON V_NVCB TO RL_GV;
+GRANT SELECT ON V_NVCB TO RL_GIAOVU;
+GRANT UPDATE(DT) ON V_NVCB TO RL_GIAOVU;
 
 --CREATE OR REPLACE PROCEDURE USP_CREATEUSER AS
 --    CURSOR CUR IS 
