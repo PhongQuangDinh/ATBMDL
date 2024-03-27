@@ -60,17 +60,18 @@ BEGIN
     CLOSE CUR; 
 END; 
 
-create user NV001 IDENTIFIED by 1;
-GRANT CREATE SESSION TO NV001 container = all;
-create user NV009 IDENTIFIED by 9;
-GRANT CREATE SESSION TO NV009 container = all;
+--create user NV001 IDENTIFIED by 1;
+--GRANT CREATE SESSION TO NV001 container = all;
+--create user NV009 IDENTIFIED by 9;
+--GRANT CREATE SESSION TO NV009 container = all;
 
 --create role RL_NVCB;
+
 
 -- create role
 create role RL_NVCB;
 create role RL_GIAOVU;
-create role RL_GIAOVIEN;
+create role RL_GIANGVIEN;
 create role RL_TDV;
 create role RL_TK;
 create role RL_SV;
