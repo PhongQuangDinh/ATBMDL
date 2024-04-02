@@ -4,6 +4,10 @@
 -- Xem dữ liệu trên quan hệ ĐANGKY liên quan đến các lớp học phần mà giảng viên  được phân công giảng dạy. 
 -- Cập nhật dữ liệu tại các trường liên quan điểm số (trong quan hệ ĐANGKY) của các sinh viên có tham gia lớp học phần mà giảng viên đó được phân công giảng dạy. Các trường liên quan điểm số bao gồm: ĐIEMTH, ĐIEMQT, ĐIEMCK, ĐIEMTK.
 
+--select * from sys.nhansu;
+
+alter session set current_schema = ad;
+
 CREATE OR REPLACE VIEW VIEW_GV_PC AS
 SELECT *
 FROM PHANCONG
@@ -14,10 +18,14 @@ SELECT *
 FROM DANGKY
 WHERE MAGV = SYS_CONTEXT('USERENV', 'SESSION_USER'); 
 
+-- Xem dữ liệu phân công giảng dạy liên quan đến bản thân mình (PHANCONG). 
 GRANT SELECT ON VIEW_GV_PC TO RL_GIANGVIEN;
+-- Xem dữ liệu trên quan hệ ĐANGKY liên quan đến các lớp học phần mà giảng viên  được phân công giảng dạy. 
 GRANT SELECT ON VIEW_GV_DK TO RL_GIANGVIEN;
+-- Cập nhật dữ liệu tại các trường liên quan điểm số (trong quan hệ ĐANGKY) của các sinh viên có tham gia lớp học phần mà giảng viên đó được phân công giảng dạy. Các trường liên quan điểm số bao gồm: ĐIEMTH, ĐIEMQT, ĐIEMCK, ĐIEMTK.
 GRANT UPDATE(DIEMTH, DIEMQT, DIEMCK, DIEMTK) ON VIEW_GV_DK TO RL_GIANGVIEN;
 
+-- Như một người dùng có vai trò “Nhân viên cơ bản” (xem mô tả CS#1).
 grant select on SINHVIEN to RL_GIANGVIEN;
 grant select on DONVI to RL_GIANGVIEN;
 grant select on HOCPHAN to RL_GIANGVIEN;
@@ -25,8 +33,12 @@ grant select on KHMO to RL_GIANGVIEN;
 GRANT SELECT ON VIEW_THONGTIN_NVCB TO RL_GIANGVIEN;
 GRANT UPDATE(DT) ON VIEW_THONGTIN_NVCB TO RL_GIANGVIEN;
 
--- Như một người dùng có vai trò “Nhân viên cơ bản”
+grant RL_GIANGVIEN to NV006
 
+select * from nhansu
+
+
+grant RL_TDV to NV004
 
 
 -- TRƯỞNG ĐƠN VỊ

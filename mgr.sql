@@ -14,7 +14,7 @@ AS
                                                 FROM ALL_USERS) 
                     ); 
     STRSQL VARCHAR(2000); 
-    USR VARCHAR2(5); 
+    USR VARCHAR2(4); 
 BEGIN 
     OPEN CUR; 
     STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE'; 
@@ -41,7 +41,7 @@ AS
                                                 FROM ALL_USERS) 
                     ); 
     STRSQL VARCHAR(2000); 
-    USR VARCHAR2(5); 
+    USR VARCHAR2(6); 
 BEGIN 
     OPEN CUR; 
     STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE'; 
@@ -59,6 +59,14 @@ BEGIN
     EXECUTE IMMEDIATE(STRSQL); 
     CLOSE CUR; 
 END; 
+
+exec USP_CREATESINHVIEN;
+exec USP_CREATENHANVIEN;
+
+SELECT username, created FROM dba_users where username like 'SV%' or username like 'NV%';
+
+select * from ad.SINHVIEN;
+select * from ad.nhansu;
 
 --create user NV001 IDENTIFIED by 1;
 --GRANT CREATE SESSION TO NV001 container = all;
@@ -82,7 +90,6 @@ grant select on ad.DONVI to RL_NVCB;
 grant select on ad.HOCPHAN to RL_NVCB;
 grant select on ad.KHMO to RL_NVCB;
 grant RL_NVCB to NV001;
-
 
 
 SELECT *
