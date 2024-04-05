@@ -1,0 +1,1 @@
+select * from ad.VIEW_GV_PC;

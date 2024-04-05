@@ -1,3 +1,4 @@
+alter session set current_schema = ad;
 -- Code xóa những bảng đã tồn tại
 DECLARE
    tables_to_drop   DBMS_SQL.VARCHAR2_TABLE
