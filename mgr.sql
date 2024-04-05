@@ -33,6 +33,8 @@ BEGIN
     CLOSE CUR; 
 END; 
 
+Exec USP_CREATENHANVIEN;
+
 CREATE OR REPLACE PROCEDURE USP_CREATESINHVIEN
 AS 
     CURSOR CUR IS (SELECT MASV 
@@ -41,7 +43,7 @@ AS
                                                 FROM ALL_USERS) 
                     ); 
     STRSQL VARCHAR(2000); 
-    USR VARCHAR2(5); 
+    USR VARCHAR2(6); 
 BEGIN 
     OPEN CUR; 
     STRSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE'; 
@@ -60,6 +62,8 @@ BEGIN
     CLOSE CUR; 
 END; 
 
+Exec USP_CREATESINHVIEN;
+SELECT * FROM nhansu
 --create user NV001 IDENTIFIED by 1;
 --GRANT CREATE SESSION TO NV001 container = all;
 --create user NV009 IDENTIFIED by 9;
@@ -67,7 +71,7 @@ END;
 
 --create role RL_NVCB;
 
-
+select * from nhansu
 -- create role
 create role RL_NVCB;
 create role RL_GIAOVU;
