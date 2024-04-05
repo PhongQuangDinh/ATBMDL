@@ -3,6 +3,7 @@
 -- Xem dữ liệu phân công giảng dạy liên quan đến bản thân mình (PHANCONG). 
 -- Xem dữ liệu trên quan hệ ĐANGKY liên quan đến các lớp học phần mà giảng viên  được phân công giảng dạy. 
 -- Cập nhật dữ liệu tại các trường liên quan điểm số (trong quan hệ ĐANGKY) của các sinh viên có tham gia lớp học phần mà giảng viên đó được phân công giảng dạy. Các trường liên quan điểm số bao gồm: ĐIEMTH, ĐIEMQT, ĐIEMCK, ĐIEMTK.
+alter session set current_schema = ad;
 
 --select * from sys.nhansu;
 

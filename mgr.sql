@@ -33,6 +33,8 @@ BEGIN
     CLOSE CUR; 
 END; 
 
+Exec USP_CREATENHANVIEN;
+
 CREATE OR REPLACE PROCEDURE USP_CREATESINHVIEN
 AS 
     CURSOR CUR IS (SELECT MASV 
@@ -75,7 +77,7 @@ select * from ad.nhansu;
 
 --create role RL_NVCB;
 
-
+select * from nhansu
 -- create role
 create role RL_NVCB;
 create role RL_GIAOVU;
