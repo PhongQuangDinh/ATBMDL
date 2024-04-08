@@ -9,3 +9,6 @@ GRANT EXECUTE ANY PROCEDURE TO ad;
 GRANT all PRIVILEGES TO ad;
 
 Grant SYSDBA TO ad;
+
+SELECT VALUE FROM v$option WHERE parameter = 'Oracle Label Security';
+SELECT status FROM dba_ols_status WHERE name = 'OLS_CONFIGURE_STATUS';
